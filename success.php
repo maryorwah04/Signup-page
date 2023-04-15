@@ -9,7 +9,13 @@
 </head>
 <body>
     <main>
-        <div class="msg">Congrats, Your account has been created</div>
+        <div class="msg">Congrats, Your account has been created🥳🥳</div><br>
+        <h3>Your details are:</h3><br>
+        <?php
+            echo "Username: " .$name. ".<br>";
+            echo "Email: " .$email. ".<br>"; 
+            echo "Password: " .$pin. ".<br>"; 
+        ?>
     </main>
 </body>
 </html>
