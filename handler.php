@@ -7,6 +7,8 @@
 
         $pin = filter_input(INPUT_POST, 'user_pin');
 
+        $pin2 = filter_input(INPUT_POST, 'user_pin2');
+
         //errors
         if (empty($name)) {
             $name_error = 'Input your name';
@@ -24,6 +26,14 @@
             $pin_error = 'Input your password';
         } elseif (strlen($pin) < 6) {
             $pin_error = 'Your password must has at least 6 characters';
+        }
+
+        if (empty($pin2)) {
+            $pin2_error = 'Confirm your password';
+        }
+
+        if ($pin !== $pin2) {
+            $error = 'Password must match';
         }
     }
 
