@@ -8,6 +8,9 @@
     if (!isset($pin)) {
         $pin = '';
     }
+    if (!isset($pin2)) {
+        $pin2 = '';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +27,11 @@
     <main>
         <form action="handler.php" method="post">
             <h4> WELCOME</h4>
+            <?php 
+                if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($name_error) && empty($email_error) && empty($pin_error) && empty($pin2_error) && empty($error)) {
+                    require ('success.php');
+                }
+            ?>
 
             <label for="Name">Name
                 <input type="text" name="user_name" id="user_name"> <br>
@@ -39,7 +47,7 @@
                 <?php 
                     if (isset($email_error)) {
                         echo $email_error;
-                    }
+                    } 
                 ?>
             </label>
 
@@ -52,13 +60,19 @@
                 ?>
             </label>
 
-            <input type="submit" value="Register" class="submit">
+            <label for="Password">Confirm Password
+                <input type="password" name="user_pin2" id="user_pin2"><br>
+                <?php
+                    if (isset($pin2_error)) {
+                        echo $pin2_error;
+                    }
+                    if (isset($error)) {
+                        echo $error;
+                    }
+                ?>
+            </label>
 
-            <?php 
-                if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($name_error) && empty($email_error) && empty($pin_error)) {
-                    require ('success.php');
-                }                
-            ?>
+            <input type="submit" value="Create account" class="submit">
         </form>
 
         <?php
