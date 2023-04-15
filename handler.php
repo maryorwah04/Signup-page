@@ -9,7 +9,7 @@
 
         $pin2 = filter_input(INPUT_POST, 'user_pin2');
 
-        //errors
+        //error messages
         if (empty($name)) {
             $name_error = 'Input your name';
         } elseif (strlen($name) < 6) {
