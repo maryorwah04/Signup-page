@@ -29,7 +29,7 @@
             <h4> WELCOME</h4>
             <?php 
                 if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($name_error) && empty($email_error) && empty($pin_error) && empty($pin2_error) && empty($error)) {
-                    require ('success.php');
+                    require('success.php');
                 }
             ?>
 
@@ -46,7 +46,7 @@
                 <input type="email" name="user_email" id="user_email"><br>
                 <?php 
                     if (isset($email_error)) {
-                        echo $email_error;
+                        echo $email_error;`
                     } 
                 ?>
             </label>
@@ -59,7 +59,7 @@
                     }
                 ?>
             </label>
-``
+
             <label for="Password">Confirm Password
                 <input type="password" name="user_pin2" id="user_pin2"><br>
                 <?php
