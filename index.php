@@ -46,8 +46,8 @@
                 <input type="email" name="user_email" id="user_email"><br>
                 <?php 
                     if (isset($email_error)) {
-                        echo $email_error;`
-                    } 
+                        echo $email_error;
+                    }
                 ?>
             </label>
 
