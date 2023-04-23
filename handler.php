@@ -19,7 +19,7 @@
         if (empty($email)) {
             $email_error = 'Input your email';
         } elseif (strpos($email, ".") == false) {
-            $email_error = 'Invalid email address, there must be a .';
+            $email_error = 'Invalid email address, there must be a '.'';
         }
 
         if (empty($pin)) {
