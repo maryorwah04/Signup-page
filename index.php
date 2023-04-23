@@ -59,14 +59,15 @@
                     }
                 ?>
             </label>
-
+``
             <label for="Password">Confirm Password
                 <input type="password" name="user_pin2" id="user_pin2"><br>
                 <?php
                     if (isset($pin2_error)) {
                         echo $pin2_error;
-                    }
-                    if (isset($error)) {
+                    } elseif (isset($pin2_error) && isset($error)) {
+                        echo $pin2_error;
+                    } elseif (isset($error)) {
                         echo $error;
                     }
                 ?>
@@ -76,7 +77,6 @@
         </form>
 
         <?php
-
         ?>
     </main>
 </body>
