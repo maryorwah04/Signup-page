@@ -3,7 +3,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $name = filter_input(INPUT_POST, 'user_name');
 
-        $email = filter_input(INPUT_POST, 'user_email');
+        $email = filter_input(INPUT_POST, FILTER_VALIDATE_EMAIL);
 
         $pin = filter_input(INPUT_POST, 'user_pin');
 
@@ -36,7 +36,6 @@
             $error = 'Password must match';
         }
     }
-
     require ('index.php');
 ?>
 
